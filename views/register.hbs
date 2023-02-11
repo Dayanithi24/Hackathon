@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home Page</title>
+    <base href="/">
+    <link rel="stylesheet" href="/css/sample.css" />
+</head>
+<body>
+    <div class="full-page1">
+        <div class="navbar">
+            <div id="heading">
+                <a href='#' style="color:white;"><h1>KEC Elective Course Picker</h1></a>
+            </div>
+            <nav>
+                <ul id='MenuItems'>
+                    <li><a href='https://kongu.ac.in/index.php' target="_blank">About</a></li>
+                    <li><a href='https://kongu.ac.in/contact.php' target="_blank">Contact Us</a></li>
+                    <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">SignUp</button></li>
+                </ul>
+            </nav>
+        </div>
+    <div id='login-form'class='login-page'>
+            <div class="form-box">
+        <div class="text" style="color:white">Registration</div>
+        {{#if msg}}
+        <p class="{{msg_type}}">{{msg}}</p>
+        {{/if}}
+        <form action="/auth/register" method="post">
+            <div class="data">
+                <label for="Roll" style="color:white">Roll Number</label>
+                <input type="text"  Name="roll" id="roll">
+            </div>
+            <div class="data">
+                <label for="Name" style="color:white">Full Name</label>
+                <input type="text"  Name="name" id="name">
+            </div>
+            <div class="data">
+                <label for="email" style="color:white">Email</label>
+                <input type="email"  Name="email" id="email">
+            </div>
+             <div class="data">
+                <label for="DOB" style="color:white">Date_Of_Birth</label>
+                <input type="date"  Name="date" id="date">
+            </div>
+            <div class="data">
+                <label for="phone" style="color:white">Mobile_Number</label>
+                <input type="text"  Name="mno" id="mno">
+            </div>
+            <div class="data">
+                <label for="Password" style="color:white">Password</label>
+                <input type="password" Name="Password" id="Password">
+            </div>
+            <div class="data">
+                <label for="confirm-Password" style="color:white">confirm-Password</label>
+                <input type="password" Name="confirm_Password" id="confirm_Password">
+            </div>
+            <div class="btn">
+                <button class="submit-btn" type="submit">REGISTER</button>
+            </div>
+            <div class="signup-link">already a member ?
+                <a href="/">Login Now</a>
+            </div>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
